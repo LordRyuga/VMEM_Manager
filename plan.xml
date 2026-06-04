@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project_context>
+    <plan>
+        <![CDATA[
+Language: C++
+Things to be implemented
+
+1. TLB cache
+2. Page table (One per process)
+3. Physical Memory Manager => responsible for handling frames
+    Will maintain free frame list
+4. Page Replacement Policy => responsible for eviction logic (LRU stack, FIFO, etc.)
+    Separating 3 and 4 follows SRP and makes debugging page faults much easier.
+
+Now, TLB will have the following struct for each entry =>
+[ tag (page num) | frame num | access control bits | valid bit | dirty bit | asid ]
+
+The page table will have the following struct for each entry =>
+[ frame number | valid bit | dirty bit | access control | swap space offset ]
+
+The main MMU unit (class) will maintain:
+    1. TLB miss rate
+    2. Page fault rate
+    3. PTBR (Page Table Base Register) -> Points to the active process's page table.
+    
+    It will also provide 2 global methods:
+    1. convert_address(logical_addr, access_type)
+    2. get_stats(stats& stat) => populates the stat struct
+    
+    It will also have a protected method for allocating a frame.
+    
+Address conversion takes the following steps:
+    1. Extraction of page number and offset.
+    2. Check PTBR to ensure we are translating for the correct active process.
+    3. Using page number:
+        1. Check TLB for a match (using page num as tag) AND ensure ASID matches current process:
+            a. if TLB hit AND valid bit is 1:
+                1. Check if access level requested is permitted. If not, throw Access Denied (Segfault).
+                2. If access_type == WRITE, set dirty bit = 1 in TLB.
+                3. Get frame num, merge with offset, return physical address.
+                
+            b. if TLB miss (or valid bit is 0):
+                1. Access the Page Table (via PTBR) using page num as index.
+                2. Check the VALID bit.
+                    if valid == 0 (PAGE FAULT):
+                        request frame allocation from Physical Memory Manager.
+                        update page fault rate.
+                        load page from swap space offset into the newly allocated frame.
+                        update page table entry (frame = new frame, valid = 1, dirty = 0).
+                
+                3. Check if access level requested is permitted. If not, throw Access Denied.
+                4. If access_type == WRITE, set dirty bit = 1 in Page Table.
+                
+                5. Save page table entry into TLB (evicting an old TLB entry if necessary).
+                6. Get frame number, construct physical address, return.
+                
+For page allocation in case of page fault:
+    1. Look at free frame list.
+    2. If not empty:
+        pop frame, return frame number.
+    
+    3. If empty (need eviction):
+        consult Page Replacement Policy (e.g., LRU) to pick a victim frame.
+        use a reverse-mapping table to find WHICH page table entry currently maps to this victim frame.
+        check the dirty bit of that page table entry.
+            if dirty == 1, write the frame's contents to the swap space offset.
+        
+        set the valid bit of that page table entry to 0 (invalidating it for the old process).
+        return the newly freed frame number.
+        ]]>
+    </plan>
+
+    <folder_structure>
+        <![CDATA[
+virtual_memory_sim/
+├── CMakeLists.txt (or Makefile)
+├── src/
+│   ├── main.cpp                  # Entry point, file I/O (reading addresses.txt)
+│   ├── core/
+│   │   ├── MMU.h / .cpp          # The main Memory Management Unit
+│   │   └── System.h / .cpp       # Manages processes and coordinates the simulation
+│   ├── memory/
+│   │   ├── PhysicalMemory.h / .cpp # Manages the byte array and free frames
+│   │   └── BackingStore.h / .cpp # Handles file I/O for BACKING_STORE.bin
+│   ├── paging/
+│   │   ├── PageTable.h / .cpp    # Per-process page table logic
+│   │   ├── TLB.h / .cpp          # Translation Lookaside Buffer cache
+│   │   └── Types.h               # Shared structs (TLBEntry, PageTableEntry, Stats)
+│   └── policy/
+│       ├── IReplacement.h        # Interface for replacement policies
+│       ├── LRUPolicy.h / .cpp    # LRU Implementation
+│       └── FIFOPolicy.h / .cpp   # FIFO Implementation
+└── data/
+    ├── addresses.txt
+    ├── correct.txt
+    └── BACKING_STORE.bin
+        ]]>
+    </folder_structure>
+</project_context>
