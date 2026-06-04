@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvmem_core.a CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o
+/usr/bin/ranlib libvmem_core.a
