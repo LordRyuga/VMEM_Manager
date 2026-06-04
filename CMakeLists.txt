@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(vmem_core
+    src/memory/BackingStore.cpp
+    src/memory/PhysicalMemory.cpp
     src/paging/Types.cpp
 )
 
