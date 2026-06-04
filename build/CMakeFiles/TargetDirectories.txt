@@ -1,0 +1,4 @@
+/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles/vmem_core.dir
+/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles/copy_data.dir
+/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles/edit_cache.dir
+/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles/rebuild_cache.dir
