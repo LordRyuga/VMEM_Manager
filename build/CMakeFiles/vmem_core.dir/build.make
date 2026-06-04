@@ -72,10 +72,38 @@ include CMakeFiles/vmem_core.dir/flags.make
 CMakeFiles/vmem_core.dir/codegen:
 .PHONY : CMakeFiles/vmem_core.dir/codegen
 
+CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o: CMakeFiles/vmem_core.dir/flags.make
+CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o: /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/BackingStore.cpp
+CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o: CMakeFiles/vmem_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o -MF CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o.d -o CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o -c /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/BackingStore.cpp
+
+CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/BackingStore.cpp > CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.i
+
+CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/BackingStore.cpp -o CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.s
+
+CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o: CMakeFiles/vmem_core.dir/flags.make
+CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o: /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/PhysicalMemory.cpp
+CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o: CMakeFiles/vmem_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o -MF CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o.d -o CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o -c /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/PhysicalMemory.cpp
+
+CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/PhysicalMemory.cpp > CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.i
+
+CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/workspace/LordRyuga/VMEM_Manager/src/memory/PhysicalMemory.cpp -o CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.s
+
 CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o: CMakeFiles/vmem_core.dir/flags.make
 CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o: /tmp/workspace/LordRyuga/VMEM_Manager/src/paging/Types.cpp
 CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o: CMakeFiles/vmem_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o -MF CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o.d -o CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o -c /tmp/workspace/LordRyuga/VMEM_Manager/src/paging/Types.cpp
 
 CMakeFiles/vmem_core.dir/src/paging/Types.cpp.i: cmake_force
@@ -88,15 +116,19 @@ CMakeFiles/vmem_core.dir/src/paging/Types.cpp.s: cmake_force
 
 # Object files for target vmem_core
 vmem_core_OBJECTS = \
+"CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o" \
+"CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o" \
 "CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o"
 
 # External object files for target vmem_core
 vmem_core_EXTERNAL_OBJECTS =
 
+libvmem_core.a: CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o
+libvmem_core.a: CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o
 libvmem_core.a: CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o
 libvmem_core.a: CMakeFiles/vmem_core.dir/build.make
 libvmem_core.a: CMakeFiles/vmem_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libvmem_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/tmp/workspace/LordRyuga/VMEM_Manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libvmem_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/vmem_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vmem_core.dir/link.txt --verbose=$(VERBOSE)
 

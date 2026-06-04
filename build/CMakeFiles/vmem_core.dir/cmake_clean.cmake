@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o"
+  "CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o.d"
+  "CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o"
+  "CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o.d"
   "CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o"
   "CMakeFiles/vmem_core.dir/src/paging/Types.cpp.o.d"
   "libvmem_core.a"

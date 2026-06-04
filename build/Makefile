@@ -142,6 +142,54 @@ copy_data/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_data.dir/build.make CMakeFiles/copy_data.dir/build
 .PHONY : copy_data/fast
 
+src/memory/BackingStore.o: src/memory/BackingStore.cpp.o
+.PHONY : src/memory/BackingStore.o
+
+# target to build an object file
+src/memory/BackingStore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vmem_core.dir/build.make CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.o
+.PHONY : src/memory/BackingStore.cpp.o
+
+src/memory/BackingStore.i: src/memory/BackingStore.cpp.i
+.PHONY : src/memory/BackingStore.i
+
+# target to preprocess a source file
+src/memory/BackingStore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vmem_core.dir/build.make CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.i
+.PHONY : src/memory/BackingStore.cpp.i
+
+src/memory/BackingStore.s: src/memory/BackingStore.cpp.s
+.PHONY : src/memory/BackingStore.s
+
+# target to generate assembly for a file
+src/memory/BackingStore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vmem_core.dir/build.make CMakeFiles/vmem_core.dir/src/memory/BackingStore.cpp.s
+.PHONY : src/memory/BackingStore.cpp.s
+
+src/memory/PhysicalMemory.o: src/memory/PhysicalMemory.cpp.o
+.PHONY : src/memory/PhysicalMemory.o
+
+# target to build an object file
+src/memory/PhysicalMemory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vmem_core.dir/build.make CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.o
+.PHONY : src/memory/PhysicalMemory.cpp.o
+
+src/memory/PhysicalMemory.i: src/memory/PhysicalMemory.cpp.i
+.PHONY : src/memory/PhysicalMemory.i
+
+# target to preprocess a source file
+src/memory/PhysicalMemory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vmem_core.dir/build.make CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.i
+.PHONY : src/memory/PhysicalMemory.cpp.i
+
+src/memory/PhysicalMemory.s: src/memory/PhysicalMemory.cpp.s
+.PHONY : src/memory/PhysicalMemory.s
+
+# target to generate assembly for a file
+src/memory/PhysicalMemory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vmem_core.dir/build.make CMakeFiles/vmem_core.dir/src/memory/PhysicalMemory.cpp.s
+.PHONY : src/memory/PhysicalMemory.cpp.s
+
 src/paging/Types.o: src/paging/Types.cpp.o
 .PHONY : src/paging/Types.o
 
@@ -176,6 +224,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... copy_data"
 	@echo "... vmem_core"
+	@echo "... src/memory/BackingStore.o"
+	@echo "... src/memory/BackingStore.i"
+	@echo "... src/memory/BackingStore.s"
+	@echo "... src/memory/PhysicalMemory.o"
+	@echo "... src/memory/PhysicalMemory.i"
+	@echo "... src/memory/PhysicalMemory.s"
 	@echo "... src/paging/Types.o"
 	@echo "... src/paging/Types.i"
 	@echo "... src/paging/Types.s"
